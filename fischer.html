@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    Array.prototype.shuffle =function(){
+        var i = this.length, j, temp; 
+
+while(--i > 0) {
+    j = Math.floor(Math.random() * (i+1));
+    temp = this[j];
+    this[j] = arr[i];
+    this[i] = temp;
+    }
+    return this;
+}
+    var arr =['a','b','c','d','e','f','g','h'];
+        var result = arr.shuffle();
+    document.write(arr);
+</script>
