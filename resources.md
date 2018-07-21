@@ -1,7 +1,7 @@
 
-/*Udacity - Matthew Cranford*/
+**Udacity - Matthew Cranford**
 
-Part 1 - Setup: https://matthewcranford.com/memory-game-walkthrough-part-1-setup/ 17
+Part 1 - [Matthew Setup walkthrough](https://matthewcranford.com/memory-game-walkthrough-part-1-setup/)
 
 Part 2 - Toggling Cards: https://matthewcranford.com/memory-game-walkthrough-part-2-toggling-cards/ 8
 

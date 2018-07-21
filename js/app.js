@@ -2,6 +2,20 @@
  * Create a list that holds all of your cards
  */
 
+const deck = document.querySelector('.deck');
+deck.addEventListener('click', function (e) {
+    const clickTarget = event.target;
+    if (clickTarget.classList.contains('card')){
+        turnCard(clickTarget) 
+
+        }
+});
+
+function turnCard(clickTarget) {
+    clickTarget.classList.toggle('open');
+    clickTarget.classList.toggle('show');
+}
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -11,7 +25,8 @@
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
