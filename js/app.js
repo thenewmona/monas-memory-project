@@ -1,7 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-
+//get the cards
 const deck = document.querySelector('.deck');
 deck.addEventListener('click', function (e) {
     const clickTarget = event.target;
@@ -11,10 +11,16 @@ deck.addEventListener('click', function (e) {
         }
 });
 
+//turn the cards
 function turnCard(clickTarget) {
     clickTarget.classList.toggle('open');
     clickTarget.classList.toggle('show');
 }
+function addTurnCard(clickTarget){
+    turnCards.push(clickTarget);
+    console.log(turnCards);
+}
+
 
 /*
  * Display the cards on the page
