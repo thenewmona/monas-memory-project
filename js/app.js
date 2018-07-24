@@ -1,25 +1,6 @@
 /*
  * Create a list that holds all of your cards
  */
-//get the cards
-const deck = document.querySelector('.deck');
-deck.addEventListener('click', function (e) {
-    const clickTarget = event.target;
-    if (clickTarget.classList.contains('card')){
-        turnCard(clickTarget) 
-
-        }
-});
-
-//turn the cards
-function turnCard(clickTarget) {
-    clickTarget.classList.toggle('open');
-    clickTarget.classList.toggle('show');
-}
-function addTurnCard(clickTarget){
-    turnCards.push(clickTarget);
-    console.log(turnCards);
-}
 
 
 /*
@@ -56,3 +37,16 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+const deck = document.querySelector('.deck');
+deck.addEventListener('click', function (e) {
+    const clickTarget = event.target;
+    if (clickTarget.classList.contains('card')){
+        turnCard(clickTarget) 
+
+        }
+});
+
+function turnCard(clickTarget) {
+    clickTarget.classList.toggle('open');
+    clickTarget.classList.toggle('show');
+}
