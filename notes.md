@@ -64,3 +64,11 @@
 https://discussions.udacity.com/t/fend-project-walkthroughs/775450
 
 https://www.diigo.com/outliner/fii42b/Udacity-Memory-Game-Project?key=dwj0y5x9cw
+
+### July 26th, 2018
+Having issues with define
+keep getting this error message
+Reached out on slack and Facebook, to figure out what it is that I am not getting 
+`Uncaught ReferenceError: toggleCards is not defined
+    at addToggleCard (app.js:70)
+    at HTMLUListElement.deck.addEventListener.event (app.js:53)`
