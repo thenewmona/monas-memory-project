@@ -2,6 +2,13 @@
  * Create a list that holds all of your cards
  */
 
+//Global Scope 
+const cards = document.querySelectorAll('.card');
+console.log('card');
+let toggledCards = [];
+
+
+
 
 /*
  * Display the cards on the page
@@ -38,15 +45,27 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 const deck = document.querySelector('.deck');
-deck.addEventListener('click', function (e) {
+deck.addEventListener('click', event => {
     const clickTarget = event.target;
-    if (clickTarget.classList.contains('card')){
-        turnCard(clickTarget) 
-
+    if (clickTarget.classList.contains('card') && toggledCards.length <2 && !toggledCards.includes(clickTarget))
+    if (clickTarget.classList.contains('card')) {
+        toggleCard(clickTarget);
+        addToggleCard(clickTarget);
+        if (toggleCards.length === 2) {
+            //checkForMatch(clickTarget);
+            //addMove();
+            //checkScore();
         }
+
+    }
 });
 
-function turnCard(clickTarget) {
+function toggleCard(clickTarget) {
     clickTarget.classList.toggle('open');
     clickTarget.classList.toggle('show');
+}
+
+function addToggleCard(clickTarget) {
+    toggledCards.push(clickTarget); //add new items to the array
+    console.log(toggleCards);
 }
