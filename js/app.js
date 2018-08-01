@@ -4,12 +4,8 @@
 
 //Global Scope 
 const cards = document.querySelectorAll('.card');
-const deck = document.querySelector('.deck');
 //console.log('card');
-
-
-
-
+let toggledCards = []; //declaring toggleCards 
 
 /*
  * Display the cards on the page
@@ -45,69 +41,27 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-
-deck.addEventListener('click', event => {
+let deck = document.querySelector('.deck');
+deck.addEventListener('click', event => { //listening for the click
     const clickTarget = event.target;
-    //determine if the card is clicked
-    if (isClickValid(clickTarget) 
+    if (clickTarget.classList.contains('card') && toggledCards.length < 2 && !toggledCards.includes(clickTarget))
+        if (clickTarget.classList.contains('card')) {
 
-    ){
-        if (clockOff) {
-            startClock();
-            clockOff = false;
+            toggledCards(clickTarget);
+            addToggleCard(clickTarget);
+            if (toggledCards.length === 2) {
+
+            }
+
         }
-
-    toggledCard(clickTarget);
-    addToggledCard(clickTarget);
-    if (toggledCards.length === 2) { // listen for 2 cards
-        checkMatch(clickTarget);
-    }
-}
 });
 
-function isClickValid(clickTarget) {
-    return (
-    clickTarget.classList.contains('card') &&    
-    !clickTarget.classList.contains('match') &&  
-    toggledCards.length < 2 &&  
-    !toggledCards.includes(clickTarget)
-
-    );
-}
-        //flipping cards
-
-        function toggleCard(card) {
-            card.classList.toggle('open');
-            card.classList.toggle('show');
-        }
-
-function addToggledCard(clickTarget){
-    toggledCards.push(clickTarget);
+function toggleCard(clickTarget) {
+    clickTarget.classList.toggle('open');
+    clickTarget.classList.toggle('show');
 }
 
-        //matching cards
-        function checkForMatch() {
-            if (toggledCards[0].firstElementChild.className ===
-                toggledCards[1].firstElementChild.className
-            ) {
-                toggledCards[0].classList.toggle('match');
-                toggledCards[1].classList.toggle('match');
-                toggledCards = [];
-            } else {
-                toggleCard = [];
+function addToggleCard(clickTarget) {
+    toggledCards.push(clickTarget); //add new items to the array
 
-                
-                //displaytimer
-//stoptimer
-//timer for card
-                setTimeout(() => {
-
-                    toggleCard(toggledCards[0]);
-                    toggleCard(toggledCards[1]);
-                    toggledCards = [];
-                }, 1000);
-            }
-        }
-    
-
-
+}
