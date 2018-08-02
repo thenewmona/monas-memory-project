@@ -1,0 +1,38 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.wordWrap": "on",
+    "html.format.wrapLineLength": 0,
+    "javascript.validate.enable": true,
+    "prettier.disableLanguages": [
+        "vue",
+        "javascript",
+        "javascriptreact",
+        "html",
+        "json"
+    ],
+    "standard.autoFixOnSave": false,
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.syntaxProfiles": {},
+    "emmet.variables": {},
+    "emmet.extensionsPath": "null",
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+    "workbench.colorTheme": "Monokai",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.fontSize": 18,
+    "editor.tabCompletion": true,
+    "window.zoomLevel": 1,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "window.menuBarVisibility": "default",
+    "workbench.statusBar.visible": true,
+    "editor.minimap.enabled": false,
+    "files.autoSave": "off",
+    "editor.tabSize": 2,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.fullReload": true,
+    "view-in-browser.customBrowser": "chrome"
+}

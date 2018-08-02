@@ -34,3 +34,6 @@ https://codeburst.io/javascript-arrow-functions-for-beginners-926947fc0cdc
 
 /*toggle*/
 https://stackoverflow.com/questions/20301235/how-to-toggle-class-using-pure-javascript-in-html
+
+using .push in the turnCards function 
+https://www.w3schools.com/jsref/jsref_push.asp
