@@ -42,13 +42,13 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 //cards won't toggle now app.js:47 Uncaught TypeError: Cannot read property 'contains' of undefined
-at HTMLUListElement.deck.addEventListener.event(app.js: 47)
+
 let deck = document.querySelector('.deck');
 deck.addEventListener('click', event => { //listening for the click
     const clickTarget = event.target;
     if (clickTarget.clasList.contains('card')) {
         toggleCard(clickTarget);
-        addToggleCard(clickTarget);
+        addToggleCard(clickTarget);//
     }
 
     //toggles the cards 
