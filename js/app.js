@@ -46,33 +46,33 @@ function shuffle(array) {
 let deck = document.querySelector('.deck');
 deck.addEventListener('click', event => { //listening for the click
     const clickTarget = event.target;
-    if (clickTarget.clasList.contains('card')) {
-        toggleCard(clickTarget);
-        addToggleCard(clickTarget);//
-    }
+    if (isClickValid(clickTarget)) {}
 
-    //toggles the cards 
+    //validate isclick 
+    function isClickValid(clickTarget) {
+        return (clickTarget.classList.contains('card') && 
+        !clickTarget.classList.contains('match') && toggledCards.length < 2 && 
+        !toggledCards.includes(clickTarget));
+    }
+    
+    toggleCard(clickTarget);
+    addToggleCard(clickTarget);
+    if (toggledCards.length === 2) {}
+
+    //what to do when a card is clicked  
     function toggleCard(clickTarget) {
         clickTarget.classList.toggle('open');
         clickTarget.classList.toggle('show');
     }
 
+    function addToggleCard(clickTarget) {
+        toggledCards.push(clickTarget);
+        console.log(toggledCards);
+    }
+
     if (clickTarget.classList.contains('card') && toggledCards.length < 2 && !toggledCards.includes(clickTarget)) {
 
-        if (toggledCards.length === 2) {
-            if (clickTarget.classList.contains('card')) {
-                checkForMatch(clickTarget);
-                addMove();
-                checkScore();
-            }
-
-        }
-    }
-
-
-    function addToggleCard(clickTarget) {
-        toggledCards.push(clickTarget); //add new items to the array
-        console.log(toggledCards);
 
     }
+
 })
