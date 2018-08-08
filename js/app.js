@@ -54,7 +54,7 @@ deck.addEventListener('click', event => { //listening for the click
         !clickTarget.classList.contains('match') && toggledCards.length < 2 && 
         !toggledCards.includes(clickTarget));
     }
-    
+
     toggleCard(clickTarget);
     addToggleCard(clickTarget);
     if (toggledCards.length === 2) {}
@@ -70,9 +70,6 @@ deck.addEventListener('click', event => { //listening for the click
         console.log(toggledCards);
     }
 
-    if (clickTarget.classList.contains('card') && toggledCards.length < 2 && !toggledCards.includes(clickTarget)) {
+    
 
-
-    }
-
-})
+});
