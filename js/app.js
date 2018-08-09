@@ -42,8 +42,11 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 //cards won't toggle now app.js:47 Uncaught TypeError: Cannot read property 'contains' of undefined
+//Matt's Cranford walkthrough
+//8-8-2018 collabration with Rachel and Sonam 
+// reviewing Sandra's code as an example  
 
-let deck = document.querySelector('.deck');
+let deck = document.querySelector('.deck');//calling cards in an array
 deck.addEventListener('click', event => { //listening for the click
     const clickTarget = event.target;
     if (isClickValid(clickTarget)) {}
