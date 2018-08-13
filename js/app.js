@@ -5,7 +5,7 @@
 //Global Scope 
 const cards = document.querySelectorAll('.card');
 //console.log('card');
-let toggledCards = []; //declaring toggleCards 
+let toggledCards = []; //calling the Cards 
 
 /*
  * Display the cards on the page
@@ -29,6 +29,9 @@ function shuffle(array) {
 
     return array;
 }
+// Need to shuffle the deck
+// 8/13 need to create shuffle branch before defining the shuffle function 
+//shuffleDeck (); 
 
 
 /*
@@ -41,38 +44,63 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-//cards won't toggle now app.js:47 Uncaught TypeError: Cannot read property 'contains' of undefined
+
 //Matt's Cranford walkthrough
-//8-8-2018 collabration with Rachel and Sonam 
+
 // reviewing Sandra's code as an example  
 
-let deck = document.querySelector('.deck');//calling cards in an array
+let deck = document.querySelector('.deck'); //calling cards in an array
 deck.addEventListener('click', event => { //listening for the click
     const clickTarget = event.target;
-    if (isClickValid(clickTarget)) {}
-
-    //validate isclick 
-    function isClickValid(clickTarget) {
-        return (clickTarget.classList.contains('card') && 
-        !clickTarget.classList.contains('match') && toggledCards.length < 2 && 
-        !toggledCards.includes(clickTarget));
+    //validate isclick error message 
+    function isClickValid(clickTarget) { // 8/13 is this a scope issue in Matt's tutorial he has this all in one block 
+        return (clickTarget.classList.contains('card') &&
+            !clickTarget.classList.contains('match') && toggledCards.length < 2 &&
+            !toggledCards.includes(clickTarget));
     }
+    //8-13 need to move this out of the block I think. removed from the above block game still works
+    if (isClickValid(clickTarget)) {}
 
     toggleCard(clickTarget);
     addToggleCard(clickTarget);
-    if (toggledCards.length === 2) {}
+    if (toggledCards.length === 2) {
+        cardMatch(clickTarget);
+    }
+    console.log('2 cards');
 
     //what to do when a card is clicked  
     function toggleCard(clickTarget) {
         clickTarget.classList.toggle('open');
         clickTarget.classList.toggle('show');
+        clickTarget.classList.toggle('disable');
+        //Julie said saturday that disable makes it so that the cards can not be flipped 
+        //back over once they are matched so that is why in Sandra's walkthrough she has disabled
     }
 
     function addToggleCard(clickTarget) {
         toggledCards.push(clickTarget);
         console.log(toggledCards);
     }
+    //cardMatch
+    //8-13 added cardMatch function but now the anchor cards stay match again and will not flip 
 
-    
+    let match = 0;//keep getting error message that matched is not defined 
+
+    function cardMatch() {
+        if (toggledCards[0].firstElementChild.className ===
+            toggledCards[1].firstElementChild.className) {
+            toggledCards[0].classList.toggle('match');
+            toggledCards[1].classList.toggle('match');
+            toggledCards = [];
+            match++;
+        } else {
+            setTimeout(() => { //https://www.w3schools.com/js/js_timing.asp
+                toggledCard(toggledCards[0]);
+                toggleCard(toggledCards[1]);
+                toggledCards = [];
+            }, 1000);
+        }
+    }
+
 
 });

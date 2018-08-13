@@ -37,3 +37,6 @@ https://stackoverflow.com/questions/20301235/how-to-toggle-class-using-pure-java
 
 using .push in the turnCards function 
 https://www.w3schools.com/jsref/jsref_push.asp
+
+/*TimeOut*/
+https://www.w3schools.com/js/js_timing.asp
